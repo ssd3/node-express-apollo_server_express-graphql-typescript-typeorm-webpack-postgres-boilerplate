@@ -1,0 +1,53 @@
+scalar JSON
+scalar Date
+
+type DeleteResult {
+    deletedIds: [Int]
+    affected: Int
+}
+
+type Contact {
+    id: ID!,
+    firstName: String!,
+    lastName: String!,
+    email: String!,
+    phone: JSON
+    createdDate: Date,
+    lastModifiedDate: Date
+}
+
+type ContactResult {
+    contacts: [Contact]
+    totalCount: Int
+}
+
+input ContactInput {
+    id: ID,
+    firstName: String!,
+    lastName: String!,
+    email: String!,
+    phone: String!
+}
+
+input ContactFilter {
+    page: Int!,
+    perPage: Int!,
+    sortField: String,
+    sortOrder: JSON,
+    id: ID,
+    firstName: String,
+    lastName: String,
+    email: String,
+    phone: String
+}
+
+type Query {
+    contacts(filter: ContactFilter!): ContactResult
+    contact(id: ID!): Contact
+}
+
+type Mutation {
+    contactCreate(input: ContactInput!): Contact!
+    contactUpdate(input: ContactInput!): Contact!
+    contactDelete(id: ID!): DeleteResult
+}

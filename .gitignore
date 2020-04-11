@@ -1,0 +1,9 @@
+/node_modules/
+/dist/
+/.idea/.gitignore
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/codeStyles/Project.xml
+/.idea/template.iml
+/.idea/vcs.xml

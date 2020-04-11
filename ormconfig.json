@@ -1,0 +1,25 @@
+{
+   "type": "postgres",
+   "host": "192.168.0.138",
+   "port": 5432,
+   "username": "template",
+   "password": "template",
+   "database": "template",
+   "schema": "template",
+   "synchronize": false,
+   "logging": true,
+   "entities": [
+      "server/entity/**/*.ts"
+   ],
+   "migrations": [
+      "server/migration/**/*.ts"
+   ],
+   "subscribers": [
+      "server/subscriber/**/*.ts"
+   ],
+   "cli": {
+      "entitiesDir": "server/entity",
+      "migrationsDir": "server/migration",
+      "subscribersDir": "server/subscriber"
+   }
+}
